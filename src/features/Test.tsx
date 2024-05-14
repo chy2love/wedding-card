@@ -12,7 +12,7 @@ export default function Test() {
       }
     });
     const data = await response.json();
-    console.log(data.data);
+    setContentData(data);
   };
   const setData = async (value: FieldValues) => {
     const response = await fetch('/api/test', {
