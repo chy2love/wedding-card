@@ -39,11 +39,11 @@ export default function Test() {
   return (
     <div>
       {contentData?.map((data) => (
-        <>
-          <p>{data.title}</p>
-          <p>{data.content}</p>
+        <div>
+          <span>{data.title}</span>
+          <span>{data.content}</span>
           <button onClick={() => deleteData(data.id)}>삭제</button>
-        </>
+        </div>
       ))}
       <span>제목</span>
       <input className="text-black" type="text" {...register('title')} />
