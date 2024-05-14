@@ -23,7 +23,7 @@ export default function Test() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(value)
-    });
+    }).then(() => getData());
   };
   const deleteData = async (id: string) => {
     const response = await fetch(`/api/test/${id}`, {
