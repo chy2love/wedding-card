@@ -8,6 +8,10 @@ export const TestSchema = new Schema({
   content: {
     type: String,
     required: true
+  },
+  password: {
+    type: String,
+    required: true
   }
 });
 const Test = models?.Test || mongoose.model('Test', TestSchema);

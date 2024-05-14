@@ -40,8 +40,8 @@ export default function Test() {
     <div>
       {contentData?.map((data) => (
         <div>
-          <span>{data.title}</span>
-          <span>{data.content}</span>
+          <span className="mr-5">{data.title}</span>
+          <span className="mr-4">{data.content}</span>
           <button onClick={() => deleteData(data.id)}>삭제</button>
         </div>
       ))}
