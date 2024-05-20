@@ -22,7 +22,7 @@ export const GET = async (req: Request, res: Response) => {
     const tests = Test;
     const allTests = await tests.find();
     return NextResponse.json({
-      data: allTests.map((i) => ({ content: i.content, title: i.title, password: i.password, id: i._id }))
+      data: allTests.map((i) => ({ content: i.content, title: i.title, id: i._id }))
     });
   } catch (error) {
     console.error(error);

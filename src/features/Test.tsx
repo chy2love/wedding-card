@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 export default function Test() {
   const { register, handleSubmit } = useForm({ mode: 'onBlur' });
+  const [password, setPassword] = useState<string>('');
   const [contentData, setContentData] = useState<
     { id: string; content: string; title: string; password: string }[] | null
   >(null);
@@ -27,11 +28,18 @@ export default function Test() {
   };
   const deleteData = async (id: string) => {
     const response = await fetch(`/api/test/${id}`, {
-      method: 'DELETE',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      }
-    }).then(() => getData());
+      },
+      body: JSON.stringify({ password })
+    });
+    if (response.status === 200) {
+      getData();
+    } else if (response.status === 401) {
+      alert('비밀번호가 틀렸습니다.');
+    }
+    console.log(response);
   };
   useEffect(() => {
     getData();
@@ -42,6 +50,7 @@ export default function Test() {
         <div>
           <span className="mr-5">{data.title}</span>
           <span className="mr-4">{data.content}</span>
+          <input type="password" onChange={(e) => setPassword(e.target.value)} />
           <button onClick={() => deleteData(data.id)}>삭제</button>
         </div>
       ))}
