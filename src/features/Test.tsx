@@ -2,7 +2,10 @@
 import { useState, useEffect } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 export default function Test() {
-  const { register, handleSubmit } = useForm({ mode: 'onBlur' });
+  const { register, handleSubmit, reset } = useForm({
+    mode: 'onBlur',
+    defaultValues: { title: '', password: '', content: '' }
+  });
   const [password, setPassword] = useState<string>('');
   const [contentData, setContentData] = useState<
     { id: string; content: string; title: string; password: string }[] | null
@@ -24,11 +27,23 @@ export default function Test() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(value)
-    }).then(() => getData());
+    }).then(() => {
+      reset();
+      getData();
+    });
   };
+  // const updateData = async (id: string) => {
+  //   const response = await fetch(`/api/test/${id}`, {
+  //     method: 'PUT',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({ password })
+  //   });
+  // };
   const deleteData = async (id: string) => {
     const response = await fetch(`/api/test/${id}`, {
-      method: 'POST',
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -50,7 +65,8 @@ export default function Test() {
         <div>
           <span className="mr-5">{data.title}</span>
           <span className="mr-4">{data.content}</span>
-          <input type="password" onChange={(e) => setPassword(e.target.value)} />
+          <input className="text-black" type="password" onChange={(e) => setPassword(e.target.value)} />
+          {/* <button onClick={() => updateData(data.id)}>수정</button> */}
           <button onClick={() => deleteData(data.id)}>삭제</button>
         </div>
       ))}
@@ -59,7 +75,7 @@ export default function Test() {
       <span>내용</span>
       <input className="text-black" type="text" {...register('content')} />
       <span>비밀번호</span>
-      <input className="text-black" type="text" {...register('password')} />
+      <input className="text-black" type="password" {...register('password')} />
       <button onClick={handleSubmit((value) => setData(value))}>저장</button>
     </div>
   );

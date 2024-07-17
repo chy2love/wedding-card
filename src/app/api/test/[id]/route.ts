@@ -2,17 +2,15 @@ import dbConnect from '@/lib/db/dbConnect';
 import Test from '@/lib/schema/test.model';
 import { NextResponse } from 'next/server';
 
-export const POST = async (req: Request, res: Response) => {
+export const DELETE = async (req: Request, res: Response) => {
   try {
     dbConnect();
     const tests = Test;
     const url = new URL(req.url);
     const { password } = await req.json();
     const id = url.pathname.split('/')[url.pathname.split('/').length - 1];
-    const pw = await tests.findOne({ _id: id });
-    console.log(pw.password);
-    console.log(password);
-    if (password == pw.password) {
+    const posting = await tests.findOne({ _id: id });
+    if (password == posting.password) {
       await tests.findByIdAndDelete(id);
       return NextResponse.json({ message: 'Test deleted successfully' }, { status: 200 });
     } else {
