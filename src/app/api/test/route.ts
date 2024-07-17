@@ -21,6 +21,7 @@ export const GET = async (req: Request, res: Response) => {
     dbConnect();
     const tests = Test;
     const allTests = await tests.find();
+    console.log(allTests);
     return NextResponse.json({
       data: allTests.map((i) => ({ content: i.content, title: i.title, id: i._id }))
     });
