@@ -1,3 +1,3 @@
-export function PlainPage() {
+export default function PlainPage() {
   return <div>Plain</div>;
 }
