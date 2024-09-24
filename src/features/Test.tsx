@@ -11,7 +11,7 @@ export default function Test() {
     { id: string; content: string; title: string; password: string }[] | null
   >(null);
   const getData = async () => {
-    const response = await fetch('/api/test', {
+    const response = await fetch('/api/plain', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -21,10 +21,10 @@ export default function Test() {
     setContentData(data.data);
   };
   const setData = async (value: FieldValues) => {
-    const response = await fetch('/api/test', {
+    const response = await fetch('/api/plain', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/plain'
       },
       body: JSON.stringify(value)
     }).then(() => {
@@ -32,17 +32,8 @@ export default function Test() {
       getData();
     });
   };
-  // const updateData = async (id: string) => {
-  //   const response = await fetch(`/api/test/${id}`, {
-  //     method: 'PUT',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({ password })
-  //   });
-  // };
   const deleteData = async (id: string) => {
-    const response = await fetch(`/api/test/${id}`, {
+    const response = await fetch(`/api/plain/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'

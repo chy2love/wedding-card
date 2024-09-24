@@ -1,10 +1,6 @@
-import Test from '@/features/Test';
-import Image from 'next/image';
+import { redirect } from 'next/navigation';
 
 export default function Home() {
-  return (
-    <>
-      <Test />
-    </>
-  );
+  redirect('/plain');
+  return <></>;
 }

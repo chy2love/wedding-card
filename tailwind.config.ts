@@ -11,8 +11,35 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+        menu: 'url("./assets/menu.svg")'
+      },
+      fontFamily: {
+        'dm-serif': ['var(--font-dm-serif)'],
+        'noto-serif': ['var(--font-noto-serif)']
+      },
+      colors: {
+        bk: {
+          '01': '#000000',
+          '02': '#33302F',
+          '03': '#666667',
+          '04': '#9a9a9d',
+          '05': '#c1c1c1'
+        },
+        bg: {
+          f2: '#F2F2F2',
+          f5: '#F5F5F5',
+          wh: '#FFFFFF'
+        },
+        section: {
+          border: '#D9D9D9'
+        },
+        br: {
+          'dark-light': '#575250'
+        },
+        primary: {
+          light: '#F8A13B',
+          main: '#FA4A0C'
+        }
       }
     }
   },

@@ -3,20 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev:host": "next dev -H 192.168.0.20",
+    "dev:local": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.32.0",
+    "date-fns": "^2.30.0",
     "mongodb": "^6.6.1",
     "mongoose": "^8.3.4",
     "next": "14.2.3",
     "prettier": "^3.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "date-fns": "^2.30.0",
     "react-hook-form": "^7.48.2"
   },
   "devDependencies": {
