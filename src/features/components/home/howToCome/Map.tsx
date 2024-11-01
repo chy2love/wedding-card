@@ -23,7 +23,7 @@ export function Map() {
 
   return (
     <>
-      <Script src={KAKAO_SDK_URL} strategy="beforeInteractive" />
+      <script src={KAKAO_SDK_URL} />
       <div className="w-full h-[250px]" id="map"></div>
     </>
   );
