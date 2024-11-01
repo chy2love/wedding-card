@@ -11,12 +11,19 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        menu: 'url("./assets/menu.svg")'
+        menu: 'url("./assets/menu.svg")',
+        edit: 'url("./assets/edit.svg")'
+      },
+      fontSize:{
+        sm: '11px',
+        md: '14px',
+        lg: '16px',
       },
       fontFamily: {
         'dm-serif': ['var(--font-dm-serif)'],
         'noto-serif': ['var(--font-noto-serif)']
       },
+
       colors: {
         bk: {
           '01': '#000000',
@@ -36,9 +43,11 @@ const config: Config = {
         br: {
           'dark-light': '#575250'
         },
+        text:{
+          'pink':'#FF1D89'
+        },
         primary: {
-          light: '#F8A13B',
-          main: '#FA4A0C'
+          main: '#1554F6'
         }
       }
     }

@@ -5,6 +5,27 @@
   .text-balance {
     text-wrap: balance;
   }
+  .ellipsis-1 {
+    @apply overflow-ellipsis whitespace-nowrap overflow-hidden;
+  }
+  .ellipsis-2 {
+    @apply overflow-ellipsis overflow-hidden;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+  .ellipsis-3 {
+    @apply overflow-ellipsis overflow-hidden;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+  .ellipsis-4 {
+    @apply overflow-ellipsis overflow-hidden;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
 }
 /* reset */
 * {
@@ -96,6 +117,15 @@ video {
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
+  font-family: inherit;
+  box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  border-style: solid;
+}
+span{
+  line-height: inherit;
+  font-weight: inherit;
 }
 * {
   &::-webkit-scrollbar {
@@ -107,6 +137,10 @@ video {
     border: 5px solid transparent;
     border-radius: 20px;
   }
+}
+html,
+body {
+  height: 100vh;
 }
 /* HTML5 display-role reset for older browsers */
 article,

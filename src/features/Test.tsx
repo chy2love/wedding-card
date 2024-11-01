@@ -52,8 +52,8 @@ export default function Test() {
   }, []);
   return (
     <div>
-      {contentData?.map((data) => (
-        <div>
+      {contentData?.map((data, idx) => (
+        <div key={idx}>
           <span className="mr-5">{data.title}</span>
           <span className="mr-4">{data.content}</span>
           <input className="text-black" type="password" onChange={(e) => setPassword(e.target.value)} />
