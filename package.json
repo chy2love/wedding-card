@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:host1": "next dev -H 192.168.0.20",
+    "dev:host1": "next dev -H 192.168.0.128",
     "dev:host2": "next dev -H 172.30.1.45",
     "dev:company": "next dev -H 192.168.0.111",
     "dev:local": "next dev",
