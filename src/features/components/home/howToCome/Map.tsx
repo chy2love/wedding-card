@@ -20,6 +20,7 @@ export function Map() {
       });
     });
     // 1. 카카오 지도 초기화
+    console.log(' => ', KAKAO_SDK_URL);
   }, []);
 
   return (
