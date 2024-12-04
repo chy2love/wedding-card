@@ -6,6 +6,8 @@ import 'react-kakao-maps-sdk';
 export function Map() {
   const KAKAO_SDK_URL = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_MAP_API_KEY}&autoload=false`;
   useEffect(() => {
+    console.log(' => ', KAKAO_SDK_URL);
+
     kakao.maps.load(() => {
       // 2. 지도 생성 및 설정
       const container = document.getElementById('map');
@@ -20,7 +22,6 @@ export function Map() {
       });
     });
     // 1. 카카오 지도 초기화
-    console.log(' => ', KAKAO_SDK_URL);
   }, []);
 
   return (
