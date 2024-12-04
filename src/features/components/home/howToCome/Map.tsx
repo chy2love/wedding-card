@@ -2,7 +2,8 @@
 import Script from 'next/script';
 import { useEffect } from 'react';
 import 'react-kakao-maps-sdk';
-const KAKAO_SDK_URL = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.MAP_API_KEY}&autoload=false`;
+const KAKAO_SDK_URL = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.MAP_API_KEY}&autoload=false`;
+
 export function Map() {
   useEffect(() => {
     kakao.maps.load(() => {
