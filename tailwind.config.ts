@@ -12,7 +12,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         menu: 'url("./assets/menu.svg")',
-        edit: 'url("./assets/edit.svg")'
+        edit: 'url("./assets/edit.svg")',
+        "right-arrow": 'url("./assets/right-arrow.svg")',
       },
       fontSize:{
         sm: '11px',

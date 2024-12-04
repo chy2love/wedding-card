@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import '../globals.css';
 import { DM_Serif_Text, Noto_Serif_KR, Nanum_Gothic } from 'next/font/google';
 import Script from 'next/script';
-const KAKAO_SDK_URL = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_MAP_API_KEY}&autoload=false`;
+import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -29,9 +29,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <head>
-        <Script type="text/javascript" src={KAKAO_SDK_URL} strategy="beforeInteractive" />
-      </head>
       <body className={`${nanumGothic.className} ${dmSerif.variable} ${notoSerif.variable}`}>{children}</body>
     </html>
   );
