@@ -2,10 +2,15 @@
 import Script from 'next/script';
 import { useEffect } from 'react';
 import 'react-kakao-maps-sdk';
-
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
 const KAKAO_SDK_URL = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_MAP_API_KEY}&autoload=false`;
 export function Map() {
   useEffect(() => {
+    const kakao = window.kakao;
     kakao.maps.load(() => {
       // 2. 지도 생성 및 설정
       console.log(' => ', KAKAO_SDK_URL);
