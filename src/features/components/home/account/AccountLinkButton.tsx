@@ -3,7 +3,7 @@ import Link from 'next/link';
 export function AccountLinkButton() {
   return (
     <div className="h-[61px] ">
-      <Link className="px-5 h-full flex items-center justify-between" href="/rsvp">
+      <Link className="px-5 h-full flex items-center justify-between" href="/dynamic/account">
         <div className="flex gap-[6px] items-center">
           <p className="w-fit text-sm py-1 px-2 bg-[#FF80ED] rounded-[6px] text-white">결혼식</p>
           <p className="text-md">

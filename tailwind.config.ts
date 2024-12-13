@@ -14,6 +14,12 @@ const config: Config = {
         menu: 'url("./assets/menu.svg")',
         edit: 'url("./assets/edit.svg")',
         "right-arrow": 'url("./assets/right-arrow.svg")',
+        "left-arrow-24": 'url("./assets/left-arrow-24.svg")',
+        "down-arrow-14" : 'url("./assets/down-arrow-14.svg")',
+        "img-back": 'url("./assets/pop/img-back.svg")',
+        "img-front": 'url("./assets/pop/img-front.svg")',
+        "pop-close": 'url("./assets/pop/pop-close.svg")',
+        "interview-close" : 'url("./assets/greeting/close-interview-pop.svg")',
       },
       fontSize:{
         sm: '11px',

@@ -26,6 +26,9 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
   }
+  .asterisk {
+    @apply w-fit relative after:content-['*'] after:absolute after:top-[-4px] after:text-[#FA4A0C] after:left-full
+  }
 }
 /* reset */
 * {
@@ -189,6 +192,7 @@ select {
   margin: 0;
   padding: 0;
   border: 0;
+  border-style: solid;
   outline: none;
   background-color: transparent;
 }

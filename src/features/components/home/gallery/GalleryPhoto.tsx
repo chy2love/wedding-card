@@ -1,33 +1,49 @@
+'use client';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import PhotoItem from './PhotoItem';
+interface AllPhotoUrlInfoType extends Record<'gallery' | 'man' | 'woman' | 'couple', SingleTypePhotoUrlInfoType[]> {}
 
-const PHOTO_ARR = [
-  { src: '', id: 1 },
-  { src: '', id: 2 },
-  { src: '', id: 3 },
-  { src: '', id: 4 },
-  { src: '', id: 5 },
-  { src: '', id: 6 },
-  { src: '', id: 7 },
-  { src: '', id: 8 },
-  { src: '', id: 9 }
-];
-export function GalleryPhoto() {
+export interface SingleTypePhotoUrlInfoType {
+  id: number;
+  thumbnailUrl: string;
+  imgUrl: string;
+}
+//길이 9 고정
+
+export function GalleryPhoto({
+  galleryType,
+  photoArr
+}: {
+  galleryType: 'gallery' | 'man' | 'woman' | 'couple';
+  photoArr: SingleTypePhotoUrlInfoType[];
+}) {
+  const [popInfo, setPopInfo] = useState<number | null>(null);
+  useEffect(() => {
+    if (popInfo !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [popInfo]);
   return (
     <>
       <div className="pt-[10px] pb-5 px-5 h-[433px] flex flex-wrap gap-[10px]">
-        {PHOTO_ARR.map((photo) => (
-          <>
-            <div key={photo.id} className=" w-[calc((100%-20px)/3)] h-[127px] bg-slate-300 rounded-[4px]"></div>
-          </>
+        {photoArr.map((photo, idx) => (
+          <PhotoItem
+            key={photo.id}
+            photo={photo}
+            idx={idx}
+            photoArrLength={photoArr.length}
+            popInfo={popInfo}
+            setPopInfo={setPopInfo}
+          />
         ))}
       </div>
-      <Link href={''} className="w-full h-[54px] flex items-center justify-center gap-1 border-t border-[#EBEBEB]">
-        <span className="text-md">더</span>
-        <span className="text-md">많은</span>
-        <span className="text-md font-[600] text-text-pink">사진</span>
-        <span className="text-md">보러가기</span>
-        <span className="text-md">{'>'}</span>
-      </Link>
     </>
   );
 }

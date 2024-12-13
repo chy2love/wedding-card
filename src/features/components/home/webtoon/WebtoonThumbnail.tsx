@@ -4,7 +4,7 @@ export function WebtoonThumbnail() {
   return (
     <div className="w-full h-[151px] p-5 flex flex-col gap-[10px]">
       <p className="text-[14px]">신랑신부의 연애 스토리가 보고싶다면?</p>
-      <Link href={''}>
+      <Link href={'/dynamic/main/webtoon'}>
         <div className="w-full h-[87px] flex items-center gap-2">
           <div className="w-[91px] h-[87px] bg-slate-400 rounded-[4px]"></div>
           <div className="flex flex-col gap-1">
