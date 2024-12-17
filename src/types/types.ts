@@ -2,9 +2,9 @@ export type VisitLogItem = {
   id: string;
   name: string;
   date: string;
-  content: string;
+  message: string;
   password: string;
-  thumbnailId: number;
+  thumbnail: number;
 };
 export type rsvpItem = {
   id: string;

@@ -38,7 +38,7 @@ export default function GalleryPage() {
   ];
   return (
     <>
-      <div className="fixed top-0 bg-white h-[51px] w-full flex justify-center items-center gap-[11px] px-[19px] border-b border-[#666667]">
+      <div className="fixed left-[50%] translate-x-[-50%] top-0 bg-white h-[51px] max-w-[440px] w-full flex justify-center items-center gap-[11px] px-[19px] border-b border-[#666667]">
         최하영 💘 윤소희 사진모음.zip
       </div>
       <div className="pt-[51px]">
