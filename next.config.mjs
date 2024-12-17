@@ -5,11 +5,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'http',
-        hostname: 'http://bbosongbbosong.com/wedding'
+        hostname: '**',
+        pathname: '/.*/**',
       },
       {
         protocol: 'https',
-        hostname: '**'
+        hostname: '**',
+        pathname: '/.*/**',
       }
     ]
   },
