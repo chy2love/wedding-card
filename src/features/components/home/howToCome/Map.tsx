@@ -1,7 +1,10 @@
 'use client';
+import Head from 'next/head';
 import Script from 'next/script';
 import { useEffect } from 'react';
 import 'react-kakao-maps-sdk';
+const KAKAO_SDK_URL = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_MAP_API_KEY}&autoload=false`;
+
 declare global {
   interface Window {
     kakao: any;
@@ -28,6 +31,7 @@ export function Map() {
 
   return (
     <>
+      <Script type="text/javascript" src={KAKAO_SDK_URL} strategy="beforeInteractive" async />
       <div className="w-full h-[250px]" id="map"></div>
     </>
   );
