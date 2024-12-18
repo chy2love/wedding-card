@@ -44,18 +44,24 @@ export default function PhotoItem({
       <div
         key={photo.id}
         onClick={handleImgClick}
-        className={`w-[calc((100%-20px)/3)] h-[127px] rounded-[4px] cursor-pointer`}
+        className={`w-[calc((100%-20px)/3)] h-[127px] rounded-[4px] cursor-pointer relative`}
       >
-        <Image className="w-full h-full" width={0} height={0} src={photo.thumbnailUrl} alt="" />
+        <Image layout="fill" objectFit="contain" src={photo.thumbnailUrl} alt="" />
       </div>
       {popInfo === idx && (
         <div className="fixed top-0 bottom-0 w-full flex items-center justify-center left-[50%] translate-x-[-50%] max-w-[440px] bg-[rgba(0,0,0,0.7)] z-[9999]">
-          <div className="w-full relative">
+          <div className="w-full h-[200px] relative">
+            <Image
+              layout="fill"
+              objectFit="cover"
+              className="w-full"
+              src={'https://bbosong.co.kr/img/toon/toon1-thumb.jpg'}
+              alt=""
+            />
             <div
               onClick={() => setPopInfo(null)}
               className="absolute w-[20px] h-[20px] bg-pop-close bg-no-repeat top-5 right-5"
             ></div>
-            <Image width={0} height={0} className="w-full" src={photo.imgUrl} alt="" />
             <div
               onClick={handleBack}
               className="absolute w-[50px] h-[50px] bg-img-back bg-no-repeat left-0 top-[50%] translate-y-[-50%]"

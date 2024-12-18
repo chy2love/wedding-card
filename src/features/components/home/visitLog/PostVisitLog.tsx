@@ -61,10 +61,10 @@ export default function PostVisitLog({
         <div className="flex gap-[10px] w-full h-fit mb-10">
           {thumbnailArr.map((thumbnail) => (
             <div
-              className={`w-[calc((100%-30px)/4)] h-fit overflow-hidden rounded-[4px]  ${selectedThumbnail === thumbnail.id ? 'border-2 border-black' : 'border-2 border-transparent'}`}
+              className={`w-[calc((100%-30px)/4)] h-[70px] overflow-hidden relative rounded-[4px]  ${selectedThumbnail === thumbnail.id ? 'border-2 border-black' : 'border-2 border-transparent'}`}
               onClick={() => setSelectedThumbnail(thumbnail.id)}
             >
-              <Image src={thumbnail.thumbnailUrl} alt="" width={0} height={0} className="w-full" />
+              <Image src={thumbnail.thumbnailUrl} alt="" layout="fill" objectFit="contain" className="w-full" />
             </div>
           ))}
         </div>

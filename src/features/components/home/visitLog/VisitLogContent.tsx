@@ -57,11 +57,10 @@ function VisitLogContentItem({
   return (
     <>
       <div className="w-full relative p-5 flex gap-[10px] border-b border-[#EBEBEB]">
-        <div className="w-10 h-10 rounded-[4px] overflow-hidden">
+        <div className="w-10 h-10 relative rounded-[4px] overflow-hidden">
           <Image
-            width={0}
-            height={0}
-            className="w-full h-full"
+            layout="fill"
+            objectFit="contain"
             src={thumbnailArr.find((item) => item.id === visitLog.thumbnail)!.thumbnailUrl}
             alt=""
           />

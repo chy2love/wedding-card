@@ -1,3 +1,9 @@
-export default function WebtoonPage() {
-  return <div></div>;
+import WebtoonPage from '@/features/components/home/webtoon/WebtoonPage';
+
+export default function Page() {
+  return (
+    <>
+      <WebtoonPage />
+    </>
+  );
 }
