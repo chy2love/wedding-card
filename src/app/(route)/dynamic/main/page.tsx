@@ -8,7 +8,6 @@ import { VisitLog } from '@/features/components/home/visitLog/VisitLog';
 import { RsvpLinkButton } from '@/features/components/home/rsvp/RsvpLinkButton';
 import { AccountLinkButton } from '@/features/components/home/account/AccountLinkButton';
 import { LastGreeting } from '@/features/components/home/last/LastGreeting';
-import Script from 'next/script';
 
 export default function DynamicPage() {
   return (
