@@ -451,8 +451,8 @@ export const gallery = {
   couple: [
     {
       id: 70,
-      thumbnailUrl: '',
-      imgUrl: '',
+      thumbnailUrl: '1',
+      imgUrl: '1',
     },
   ],
 };
@@ -468,24 +468,24 @@ export const main = {
   thanksCard: 'https://bbosong.co.kr/img/main/thanks_dialog_image.jpg',
 }
 // 방명록
-export const visitLog = {
-  item1: {
+export const visitLog = [
+  {
     active: 'https://bbosong.co.kr/img/visit-log/visit-log-1-color.png',
     default: 'https://bbosong.co.kr/img/visit-log/visit-log-1-gray.png',
   },
-  item2: {
+  {
     active: 'https://bbosong.co.kr/img/visit-log/visit-log-2-color.png',
     default: 'https://bbosong.co.kr/img/visit-log/visit-log-2-gray.png',
   },
-  item3: {
+  {
     active: 'https://bbosong.co.kr/img/visit-log/visit-log-3-color.png',
     default: 'https://bbosong.co.kr/img/visit-log/visit-log-3-gray.png',
   },
-  item4: {
+  {
     active: 'https://bbosong.co.kr/img/visit-log/visit-log-4-color.png',
     default: 'https://bbosong.co.kr/img/visit-log/visit-log-4-gray.png',
   },
-}
+]
 // 웹툰 - 리스트페이지 최상단 배너? 썸네일..?
 export const toon = 'https://bbosong.co.kr/img/toon/cartoon_thumb.jpg'
 

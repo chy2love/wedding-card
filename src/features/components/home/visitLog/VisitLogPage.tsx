@@ -32,7 +32,7 @@ export default function VisitLogPage() {
     }
   };
   return (
-    <>
+    <div className="overflow-hidden">
       <div className="fixed left-[50%] translate-x-[-50%] top-0 bg-white h-[51px] max-w-[440px] w-full flex justify-center items-center gap-[11px] px-[19px] border-b border-[#666667] z-[999]">
         축하 인사를 담은 방명록
         <div
@@ -40,12 +40,12 @@ export default function VisitLogPage() {
           className="absolute right-5 top-[50%] translate-y-[-50%] bg-[url('./assets/post-visit-log.svg')] w-5 h-5 cursor-pointer"
         ></div>
       </div>
-      <div className="pt-[51px]">
+      <div className="pt-[51px] ">
         <VisitLogContent visitLogs={visitLogs} afterDeleteCallback={getVisitLogs} />
       </div>
       {postVisitLogPopState && (
         <PostVisitLog afterPostCallback={getVisitLogs} close={() => setPostVisitLogPopState(false)} />
       )}
-    </>
+    </div>
   );
 }

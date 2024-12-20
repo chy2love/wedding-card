@@ -19,6 +19,7 @@
     "mongodb": "^6.6.1",
     "mongoose": "^8.3.4",
     "next": "14.2.3",
+    "plaiceholder": "^3.0.0",
     "prettier": "^3.2.5",
     "react": "^18",
     "react-copy-to-clipboard": "^5.1.0",
@@ -26,6 +27,7 @@
     "react-hook-form": "^7.48.2",
     "react-kakao-maps-sdk": "^1.1.27",
     "react-slick": "^0.30.3",
+    "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.15"
   },

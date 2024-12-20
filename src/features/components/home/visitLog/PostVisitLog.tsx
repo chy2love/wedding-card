@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import PopWrap from '../../ui/PopWrap';
 import Image from 'next/image';
 import moment from 'moment';
-import { thumbnailArr } from '@/data/data';
+import { thumbnailArr, visitLog } from '@/data/data';
 
 export default function PostVisitLog({
   afterPostCallback,
@@ -13,7 +13,7 @@ export default function PostVisitLog({
   afterPostCallback: () => void;
   close: () => void;
 }) {
-  const [selectedThumbnail, setSelectedThumbnail] = useState<number>(1);
+  const [selectedThumbnail, setSelectedThumbnail] = useState<number>(0);
 
   const {
     register,
@@ -59,12 +59,17 @@ export default function PostVisitLog({
         </div>
         <p className="text-md text-[#666667] mb-[10px]">썸네일</p>
         <div className="flex gap-[10px] w-full h-fit mb-10">
-          {thumbnailArr.map((thumbnail) => (
+          {visitLog.map((thumbnail, idx) => (
             <div
-              className={`w-[calc((100%-30px)/4)] h-[70px] overflow-hidden relative rounded-[4px]  ${selectedThumbnail === thumbnail.id ? 'border-2 border-black' : 'border-2 border-transparent'}`}
-              onClick={() => setSelectedThumbnail(thumbnail.id)}
+              className={`w-[calc((100%-30px)/4)] h-[70px] overflow-hidden relative rounded-[4px]`}
+              onClick={() => setSelectedThumbnail(idx)}
             >
-              <Image src={thumbnail.thumbnailUrl} alt="" layout="fill" objectFit="contain" className="w-full" />
+              <Image
+                src={idx === selectedThumbnail ? thumbnail.active : thumbnail.default}
+                alt=""
+                fill
+                className="w-full"
+              />
             </div>
           ))}
         </div>

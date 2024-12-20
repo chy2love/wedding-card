@@ -1,6 +1,7 @@
 'use client';
 import { thumbnailArr } from '@/data/data';
 import { VisitLogItem } from '@/types/types';
+import { visitLog as visitLogSrc } from '@/data/data';
 import Image from 'next/image';
 import { useState } from 'react';
 import PopWrap from '../../ui/PopWrap';
@@ -58,12 +59,7 @@ function VisitLogContentItem({
     <>
       <div className="w-full relative p-5 flex gap-[10px] border-b border-[#EBEBEB]">
         <div className="w-10 h-10 relative rounded-[4px] overflow-hidden">
-          <Image
-            layout="fill"
-            objectFit="contain"
-            src={thumbnailArr.find((item) => item.id === visitLog.thumbnail)!.thumbnailUrl}
-            alt=""
-          />
+          <Image layout="fill" objectFit="contain" src={visitLogSrc[visitLog.thumbnail].active} alt="" />
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex gap-[6px] items-center">

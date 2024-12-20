@@ -1,42 +1,27 @@
 'use client';
+import { gallery } from '@/data/data';
 import { GalleryMenu } from './GalleryMenu';
 import GalleryMore from './GalleryMore';
 import { GalleryPhoto, SingleTypePhotoUrlInfoType } from './GalleryPhoto';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 export function Gallery() {
   const [galleryType, setGalleryType] = useState<'gallery' | 'man' | 'woman' | 'couple'>('gallery');
-  const photoArr: SingleTypePhotoUrlInfoType[] = [
-    {
-      id: 1,
-      thumbnailUrl: 'https://highcharts.com/demo/icons/products/core.svg',
-      imgUrl: 'https://highcharts.com/demo/icons/products/core.svg'
-    },
-    {
-      id: 2,
-      thumbnailUrl: 'https://highcharts.com/demo/icons/products/core.svg',
-      imgUrl: 'https://highcharts.com/demo/icons/products/core.svg'
-    },
-    {
-      id: 3,
-      thumbnailUrl: 'https://highcharts.com/demo/icons/products/core.svg',
-      imgUrl: 'https://highcharts.com/demo/icons/products/core.svg'
-    },
-    {
-      id: 5,
-      thumbnailUrl: 'https://highcharts.com/demo/icons/products/core.svg',
-      imgUrl: 'https://highcharts.com/demo/icons/products/core.svg'
-    },
-    {
-      id: 6,
-      thumbnailUrl: 'https://highcharts.com/demo/icons/products/core.svg',
-      imgUrl: 'https://highcharts.com/demo/icons/products/core.svg'
-    },
-    {
-      id: 7,
-      thumbnailUrl: 'https://highcharts.com/demo/icons/products/core.svg',
-      imgUrl: 'https://highcharts.com/demo/icons/products/core.svg'
+  const [photoArr, setPhotoArr] = useState<SingleTypePhotoUrlInfoType[]>([]);
+  useEffect(() => {
+    if (galleryType === 'gallery') {
+      setPhotoArr(new Array(6).fill(0).map((_, i) => gallery.gallery[i]));
     }
-  ];
+    if (galleryType === 'man') {
+      setPhotoArr(new Array(6).fill(0).map((_, i) => gallery.man[i]));
+    }
+    if (galleryType === 'woman') {
+      setPhotoArr(new Array(6).fill(0).map((_, i) => gallery.woman[i]));
+    }
+    if (galleryType === 'couple') {
+      setPhotoArr(new Array(6).fill(0).map((_, i) => gallery.couple[i]));
+    }
+    return () => {};
+  }, [galleryType]);
   return (
     <div>
       <GalleryMenu galleryType={galleryType} setGalleryType={setGalleryType} />

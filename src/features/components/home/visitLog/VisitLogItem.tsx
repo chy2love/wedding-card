@@ -1,17 +1,12 @@
-import { thumbnailArr } from '@/data/data';
 import { VisitLogItem as VisitLogType } from '@/types/types';
+import { visitLog as visitLogSrc } from '@/data/data';
 import Image from 'next/image';
 
 export function VisitLogItem({ visitLog }: { visitLog: VisitLogType }) {
   return (
     <div className="h-[87px] flex gap-2">
       <div className="h-[87px] w-[92px] relative">
-        <Image
-          src={thumbnailArr.find((i) => i.id === visitLog.thumbnail)!.thumbnailUrl}
-          alt="thumbnail"
-          layout="fill"
-          objectFit="contain"
-        />
+        <Image src={visitLogSrc[visitLog.thumbnail].active} alt="thumbnail" layout="fill" objectFit="contain" />
       </div>
       <div className="flex flex-col w-[calc(100%-100px)]">
         <p className="text-sm text-primary-main font-bold mb-[9px]">{visitLog.name}</p>

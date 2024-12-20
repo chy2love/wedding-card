@@ -1,9 +1,13 @@
 'use client';
 import { VisitLogItem as VisitLogType } from '@/types/types';
 import { VisitLogItem } from './VisitLogItem';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 export function VisitLogList({ visitLogs }: { visitLogs: VisitLogType[] }) {
-  const [pagedList, setPagedList] = useState<Map<number, VisitLogType[]>>(new Map());
+  const [pagedList, setPagedList] = useState<VisitLogType[][]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const chunkArray = (array: VisitLogType[], size: number) => {
     const result = [];
@@ -12,20 +16,46 @@ export function VisitLogList({ visitLogs }: { visitLogs: VisitLogType[] }) {
     }
     return result;
   };
+
   useEffect(() => {
     const chunked = chunkArray(visitLogs, 3);
-    const pagedMap = new Map<number, VisitLogType[]>();
+    const pagedMapArr: VisitLogType[][] = [];
     chunked.forEach((chunk, index) => {
-      pagedMap.set(index + 1, chunk);
+      pagedMapArr.push(chunk);
     });
-    setPagedList(pagedMap);
+    setPagedList(pagedMapArr);
   }, [visitLogs]);
   return (
     <div className="pt-5 h-[341px] flex flex-col items-center gap-5">
-      <div className="flex flex-col gap-[10px] w-full">
-        {pagedList.get(currentPage)?.map((visitLog) => <VisitLogItem key={visitLog.id} visitLog={visitLog} />)}
+      <div className="w-full max-h-[365px]">
+        <Swiper
+          observeParents={true}
+          observer={true}
+          onSlideChange={(swiper) => setCurrentPage(swiper.realIndex + 1)}
+          slidesPerView={1}
+          modules={[Pagination]}
+          pagination={{
+            el: '.swiper-pagnation',
+            clickable: true,
+            dynamicBullets: true,
+            dynamicMainBullets: 3,
+            renderBullet: function (idx: number, className: string) {
+              return `<span class="flex h-full items-center justify-center text-md w-5 text-[#33302F] ${className} "> ${idx + 1} </span>`;
+            }
+          }}
+        >
+          {pagedList.map((visitLogArr, idx) => (
+            <>
+              <SwiperSlide key={idx}>
+                {visitLogArr.map((visitLog) => (
+                  <VisitLogItem visitLog={visitLog} />
+                ))}
+              </SwiperSlide>
+            </>
+          ))}
+        </Swiper>
       </div>
-      <div className="w-[122px] h-5 bg-red-300">{/* 페이지네이션 */}</div>
+      <div className="swiper-pagnation h-5 flex justify-center ">{/* 페이지네이션 */}</div>
     </div>
   );
 }

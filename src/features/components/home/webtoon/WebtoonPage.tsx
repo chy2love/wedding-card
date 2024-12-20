@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { main, toon, webtoon as webtoonSrc } from '@/data/data';
 interface WebtoonType {
   id: number;
   title: string;
@@ -35,7 +36,9 @@ export const webtoonList: WebtoonType[] = [
 export default function WebtoonPage() {
   return (
     <div>
-      <div className="w-full h-[258px]">{/* <Image /> */}</div>
+      <div className="w-full relative overflow-hidden">
+        <Image src={toon} alt="" width={0} height={0} sizes="100%" className="w-full h-auto object-contain" />
+      </div>
       <div className="p-5">
         <p className="text-[18px] font-bold mb-2">우리의 만남</p>
         <p className="text-md text-[#484848] mb-4">글/그림 윤소희</p>
@@ -66,7 +69,9 @@ function WebtoonItem({ webtoon }: { webtoon: WebtoonType }) {
   return (
     <Link href={`/dynamic/webtoon-detail/${webtoon.id}`}>
       <div className="h-[67px] flex gap-2 py-1 px-5 items-center border-b border-[#D9D9D9]">
-        <div className="w-[92px] h-[56px] relative overflow-hidden rounded-[6px]">{/* <Image /> */}</div>
+        <div className="w-[92px] h-[56px] relative overflow-hidden rounded-[6px]">
+          <Image src={(webtoonSrc as any).thumbnail[`webtoon_${webtoon.id}`]} alt="" fill />
+        </div>
         <div className="flex flex-col gap-2">
           <p className="text-md">{webtoon.title}</p>
           <div className="flex gap-[10px] items-center text-[#9B9B9B] text-sm">

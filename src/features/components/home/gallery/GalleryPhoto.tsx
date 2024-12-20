@@ -32,7 +32,7 @@ export function GalleryPhoto({
   }, [popInfo]);
   return (
     <>
-      <div className="pt-[10px] pb-5 px-5 h-[433px] flex flex-wrap gap-[10px]">
+      <div className="pt-[10px] pb-5 px-5 flex flex-wrap items-start gap-[10px]">
         {photoArr.map((photo, idx) => (
           <PhotoItem
             key={photo.id}

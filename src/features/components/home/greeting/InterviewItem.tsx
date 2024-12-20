@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import PopWrap from '../../ui/PopWrap';
 import Image from 'next/image';
 import thanksImg from '../../../../assets/greeting/thanks-img.svg';
+import { main } from '@/data/data';
 interface Content {
   question: string;
   answer: string;
@@ -182,7 +183,19 @@ export default function InterviewItem({ interview }: { interview: { src: string;
   return (
     <>
       <div key={interview.text} className="grow h-[100px]" onClick={() => setPopState(true)}>
-        <div className="h-[80px] w-full bg-green-200 mb-[6px] rounded-[4px]"></div>
+        <div className="cursor-pointer h-[80px] w-full mb-[6px] rounded-[4px] relative overflow-hidden">
+          <Image
+            src={
+              interview.text === '감사 인사'
+                ? main.thanks
+                : interview.text === '신랑 인터뷰'
+                  ? main.interview.man
+                  : main.interview.woman
+            }
+            alt=""
+            fill
+          />
+        </div>
         <p className="text-[13px]">{interview.text}</p>
       </div>
       {popState && (
