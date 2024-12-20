@@ -211,3 +211,9 @@ select {
 .swiper-pagination-bullets-dynamic{
   transform: none !important;
 }
+.swiper-pagination-bullet-active-prev, .swiper-pagination-bullet-active-next {
+  transform: scale(1) !important;  
+}
+.swiper-pagination-bullet-active-prev-prev, .swiper-pagination-bullet-active-next-next {
+  transform: scale(0.5) !important;
+}

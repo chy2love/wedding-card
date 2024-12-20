@@ -26,7 +26,7 @@ export default function WebtoonDetail() {
     router.back();
   };
   return (
-    <>
+    <div className="bg-[#FFD9D9] min-h-screen">
       <div className="fixed left-[50%] translate-x-[-50%] top-0 bg-white h-[51px] max-w-[440px] w-full flex items-center gap-[11px] px-[19px] border-b border-[#666667]">
         <div className="w-6 h-6 bg-left-arrow-24 cursor-pointer" onClick={goBack}></div>
         <p className="font-bold text-lg text-[#666667]">{webtoonTitle}</p>
@@ -86,6 +86,6 @@ export default function WebtoonDetail() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

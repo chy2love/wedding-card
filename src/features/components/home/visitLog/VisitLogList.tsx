@@ -29,6 +29,8 @@ export function VisitLogList({ visitLogs }: { visitLogs: VisitLogType[] }) {
     <div className="pt-5 h-[341px] flex flex-col items-center gap-5">
       <div className="w-full max-h-[365px]">
         <Swiper
+          allowTouchMove={false}
+          speed={0}
           observeParents={true}
           observer={true}
           onSlideChange={(swiper) => setCurrentPage(swiper.realIndex + 1)}

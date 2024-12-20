@@ -7,8 +7,8 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex justify-center">
-      <div className="max-w-[440px] flex justify-center pb-[82px] w-full">
+    <div className="flex justify-center bg-[#FFD9D9]">
+      <div className="max-w-[440px] flex justify-center pb-[82px] w-full bg-white">
         <div className="w-full max-w-[440px] min-w-[390px]">{children}</div>
       </div>
       <Navigator />
