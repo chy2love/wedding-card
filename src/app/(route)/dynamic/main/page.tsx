@@ -8,6 +8,7 @@ import { VisitLog } from '@/features/components/home/visitLog/VisitLog';
 import { RsvpLinkButton } from '@/features/components/home/rsvp/RsvpLinkButton';
 import { AccountLinkButton } from '@/features/components/home/account/AccountLinkButton';
 import { LastGreeting } from '@/features/components/home/last/LastGreeting';
+import RsvpPop from '@/features/components/home/rsvp/RsvpPop';
 
 export default function DynamicPage() {
   return (
@@ -27,6 +28,7 @@ export default function DynamicPage() {
       <AccountLinkButton />
       <Divider />
       <LastGreeting />
+      <RsvpPop />
     </>
   );
 }

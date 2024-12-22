@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import PhotoItem from './PhotoItem';
+import GallerySlider from './GallerySlider';
 interface AllPhotoUrlInfoType extends Record<'gallery' | 'man' | 'woman' | 'couple', SingleTypePhotoUrlInfoType[]> {}
 
 export interface SingleTypePhotoUrlInfoType {
@@ -34,15 +35,9 @@ export function GalleryPhoto({
     <>
       <div className="pt-[10px] pb-5 px-5 flex flex-wrap items-start gap-[10px]">
         {photoArr.map((photo, idx) => (
-          <PhotoItem
-            key={photo.id}
-            photo={photo}
-            idx={idx}
-            photoArrLength={photoArr.length}
-            popInfo={popInfo}
-            setPopInfo={setPopInfo}
-          />
+          <PhotoItem key={photo.id} photo={photo} idx={idx} popInfo={popInfo} setPopInfo={setPopInfo} />
         ))}
+        <GallerySlider photoArr={photoArr} popInfo={popInfo} setPopInfo={setPopInfo} photoArrLength={photoArr.length} />
       </div>
     </>
   );

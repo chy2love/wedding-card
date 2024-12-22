@@ -196,6 +196,9 @@ select {
   outline: none;
   background-color: transparent;
 }
+.swiper-wrapper{
+  align-items: center;
+}
 .swiper-scrollbar-drag {
   background-color: transparent !important;
 }

@@ -1,3 +1,5 @@
+import { Content } from "@/features/components/home/greeting/InterviewItem";
+
 export const thumbnailArr = [
   {
     id: 1,
@@ -451,8 +453,203 @@ export const gallery = {
   couple: [
     {
       id: 70,
-      thumbnailUrl: '1',
-      imgUrl: '1',
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-01.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-01.jpg',
+    },
+    {
+      id: 71,
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-02.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-02.jpg',
+    },
+    {
+      id: 72,
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-03.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-03.jpg',
+    },
+    {
+      id: 73,
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-04.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-04.jpg',
+    },
+    {
+      id: 74,
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-05.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-05.jpg',
+    },
+    {
+      id: 75,
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-06.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-06.jpg',
+    },
+    {
+      id: 76,
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-07.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-07.jpg',
+    },
+    {
+      id: 77,
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-08.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-08.jpg',
+    },
+    {
+      id: 78,
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-09.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-09.jpg',
+    },
+    {
+      id: 79,
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-10.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-10.jpg',
+    },
+    {
+      id: 80,
+      thumbnailUrl: 'https://bbosong.co.kr/img/gallery/couple/thumb-cp-11.jpg',
+      imgUrl: 'https://bbosong.co.kr/img/gallery/couple/gallery-cp-11.jpg',
+    },
+    {
+      id: 81,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-12.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-12.jpg"
+    },
+    {
+      id: 82,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-13.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-13.jpg"
+    },
+    {
+      id: 83,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-14.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-14.jpg"
+    },
+    {
+      id: 84,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-15.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-15.jpg"
+    },
+    {
+      id: 85,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-16.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-16.jpg"
+    },
+    {
+      id: 86,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-17.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-17.jpg"
+    },
+    {
+      id: 87,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-18.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-18.jpg"
+    },
+    {
+      id: 88,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-19.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-19.jpg"
+    },
+    {
+      id: 89,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-20.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-20.jpg"
+    },
+    {
+      id: 90,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-21.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-21.jpg"
+    },
+    {
+      id: 91,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-22.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-22.jpg"
+    },
+    {
+      id: 92,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-23.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-23.jpg"
+    },
+    {
+      id: 93,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-24.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-24.jpg"
+    },
+    {
+      id: 94,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-25.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-25.jpg"
+    },
+    {
+      id: 95,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-26.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-26.jpg"
+    },
+    {
+      id: 96,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-27.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-27.jpg"
+    },
+    {
+      id: 97,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-28.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-28.jpg"
+    },
+    {
+      id: 98,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-29.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-29.jpg"
+    },
+    {
+      id: 99,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-30.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-30.jpg"
+    },
+    {
+      id: 100,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-31.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-31.jpg"
+    },
+    {
+      id: 101,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-32.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-32.jpg"
+    },
+    {
+      id: 102,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-33.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-33.jpg"
+    },
+    {
+      id: 103,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-34.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-34.jpg"
+    },
+    {
+      id: 104,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-35.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-35.jpg"
+    },
+    {
+      id: 105,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-36.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-36.jpg"
+    },
+    {
+      id: 106,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-37.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-37.jpg"
+    },
+    {
+      id: 107,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-38.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-38.jpg"
+    },
+    {
+      id: 108,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-39.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-39.jpg"
+    },
+    {
+      id: 109,
+      thumbnailUrl: "https://bbosong.co.kr/img/gallery/couple/thumb-cp-40.jpg",
+      imgUrl: "https://bbosong.co.kr/img/gallery/couple/gallery-cp-40.jpg"
     },
   ],
 };
@@ -489,3 +686,47 @@ export const visitLog = [
 // 웹툰 - 리스트페이지 최상단 배너? 썸네일..?
 export const toon = 'https://bbosong.co.kr/img/toon/cartoon_thumb.jpg'
 
+export  const contentMan: Content[] = [
+  {
+    question: '서로의 첫인상은 어땠나요?',
+    answer:
+      '처음만날때는 일단 되게 꾸미고 나왔어서 \r\n이쁘다는 생각 밖에 안들었고 \r\n맨날 키가 크다고 거짓말 쳤었는데 \r\n키가 쪼끄만해서 좀 속았던 경험이 있습니다.\r\n\r\n나름 연상이라고 어른스럽게 행동하려 했는데 \r\n낯을 많이 가려서 그러지 못했던 기억이 있네요.'
+  },
+  {
+    question: '서로의 매력은 뭐라고 생각하세요?',
+    answer:
+      '일단 굉장히 주도적으로 이끌려고 하는 성향이 있고 남들한테서 저를 아껴준다는 느낌을 자주 받아요.\r\n또 털털하고 외향적인 성격도 \r\n저랑 너무 잘 맞는다 생각합니다.'
+  },
+  {
+    question: '결혼 하고 나서 하고 싶은 일들이 있나요?',
+    answer:
+      '하고 싶은 일이 있다면 \r\n일단 제가 아무래도 요리하는 걸 좋아하기 때문에\r\n좀 아기자기하게 맛있는 걸 만들어 먹고 싶어요. \r\n기대하고 있습니다. \r\n안그래도 요새 맘에 드는 레시피가 있으면 \r\n찾아보고 저장하고 그러거든요.'
+  },
+  {
+    question: '결혼하면 같이 생활 해야 하는데 싸우면 어떻게 해결할 생각이세요?',
+    answer:
+      '일단 집안일을 좀 역할 분담을 해두기도 했고 \r\n둘 다 쓸데없는 거에서 고집을 부리는 스타일은 아니여서 아마 서로 양보하면서 잘 지낼 거 같아요. \r\n그래도 안 맞는 점이 있다면 \r\n뭐 이해 할 수 있는 데까지는 서로 이해하는 거죠. \r\n그러다 보면 서로 닮아지는 날이 올 거라고 생각합니다'
+  }
+];
+export const contentWoman: Content[] = [
+  {
+    question: '서로의 첫인상은 어땠나요?',
+    answer:
+      '처음 봤을 때 하영이는 진짜 학생처럼 보였어요.\r\n군대 전역하기 전이라 짧은 머리에 \r\n후드티 입고 나온 모습이 고등학생처럼 보였죠.'
+  },
+  {
+    question: '서로의 매력은 뭐라고 생각하세요?',
+    answer:
+      '하영이의 매력은 사실 너무 많은데..\r\n자세히 보면 속쌍인 눈과 동글동글 귀여운 코, 따뜻한 손, 듣기 좋은 노래 실력, 뛰어난 입담과 늘 저를 재밌게 해주고 웃게 해주는 다정한 성격.\r\n이 외에도 그냥 사람 자체가 좋아요.'
+  },
+  {
+    question: '결혼 하고 나서 하고 싶은 일들이 있나요?',
+    answer:
+      '진짜 소소한 것들이요. \r\n같이 드라마 보다가 잠에 들기. 아침에 모닝 뽀뽀하기..ㅎㅎ\r\n저희는 주말 중 하루는 굳이굳이 데이트 데이를 하는데 결혼 후에도 계속 할 예정이에요\r\n집에서 서로 각자 할 일 하며 살지 않고 \r\n일주일 중 하루는 서로에게 집중하는 날이 됐으면 해요'
+  },
+  {
+    question: '결혼하면 같이 생활 해야 하는데 싸우면 어떻게 해결할 생각이세요?',
+    answer:
+      '생활 패턴은 그 사람이 살아온 환경이잖아요.\r\n기대와 현실에서 오는 괴리감이 생기며 오는게 갈등인데\r\n웬만하면 상대의 그런 환경까지 인정하고\r\n정말 변화가 필요하거나 도움이 필요한 부분만 부탁을 하며 풀 생각이에요\r\n너무 낙천적인 생각일까요 ㅎㅎ..'
+  }
+];

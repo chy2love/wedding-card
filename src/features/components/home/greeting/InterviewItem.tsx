@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import PopWrap from '../../ui/PopWrap';
 import Image from 'next/image';
 import thanksImg from '../../../../assets/greeting/thanks-img.svg';
-import { main } from '@/data/data';
-interface Content {
+import { contentMan, contentWoman, main } from '@/data/data';
+export interface Content {
   question: string;
   answer: string;
 }
@@ -41,60 +41,6 @@ export default function InterviewItem({ interview }: { interview: { src: string;
     );
   };
   const GreetingMan = () => {
-    const contents: Content[] = [
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.'
-      },
-      {
-        question: '신랑님의 이름은 무엇인가요?',
-        answer: '최하영입니다.1'
-      }
-    ];
     return (
       <div className="p-5">
         <div
@@ -103,7 +49,7 @@ export default function InterviewItem({ interview }: { interview: { src: string;
         ></div>
         <p className="text-[18px] font-extrabold mb-9">🎤 신랑 최하영의 인터뷰</p>
         <div className="flex flex-col gap-[30px] max-h-[345px] overflow-auto">
-          {contents.map((content, index) => (
+          {contentMan.map((content, index) => (
             <InterviewContent key={index} content={content} />
           ))}
         </div>
@@ -111,60 +57,6 @@ export default function InterviewItem({ interview }: { interview: { src: string;
     );
   };
   const GreetingWoman = () => {
-    const contents: Content[] = [
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.'
-      },
-      {
-        question: '신부님의 이름은 무엇인가요?',
-        answer: '윤소희입니다.1'
-      }
-    ];
     return (
       <div className="p-5">
         <div
@@ -173,7 +65,7 @@ export default function InterviewItem({ interview }: { interview: { src: string;
         ></div>
         <p className="text-[18px] font-extrabold mb-9">🎤 신부 윤소희의 인터뷰</p>
         <div className="flex flex-col gap-[30px] max-h-[345px] overflow-auto">
-          {contents.map((content, index) => (
+          {contentWoman.map((content, index) => (
             <InterviewContent key={index} content={content} />
           ))}
         </div>
@@ -215,8 +107,8 @@ export default function InterviewItem({ interview }: { interview: { src: string;
 function InterviewContent({ content }: { content: Content }) {
   return (
     <div>
-      <p className="text-md text-[#666667] mb-4 w-[228px]">Q. {content.question}</p>
-      <p className="text-md text-[#9A9A9D] w-[228px] pl-5">{content.answer}</p>
+      <p className="text-md text-[#666667] mb-4 leading-5 whitespace-pre-wrap">Q. {content.question}</p>
+      <p className="text-md text-[#9A9A9D] pl-5 leading-5 whitespace-pre-wrap">{content.answer}</p>
     </div>
   );
 }
