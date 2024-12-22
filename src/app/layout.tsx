@@ -5,7 +5,7 @@ import Script from 'next/script';
 import Head from 'next/head';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://https://wedding-card-choi.vercel.app'),
+  metadataBase: new URL('https://wedding-card-choi.vercel.app'),
   title: '하영♥소희',
   description: '25년 1월 18일 토요일 오후 5시 30분 가천 컨벤션에서 결혼합니다'
 };
