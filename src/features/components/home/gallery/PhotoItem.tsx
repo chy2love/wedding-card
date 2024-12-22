@@ -43,12 +43,23 @@ export default function PhotoItem({
     <>
       <div
         onClick={handleImgClick}
-        className={`w-[calc((100%-20px)/3)] h-[127px] rounded-[4px] cursor-pointer relative`}
+        className={`w-[calc((100%-20px)/3)] rounded-[4px] overflow-hidden cursor-pointer relative`}
       >
-        <Image layout="fill" objectFit="contain" src={photo.thumbnailUrl} alt="" />
+        <Image
+          width={0}
+          height={0}
+          sizes="100%"
+          className="w-full h-auto object-contain"
+          src={photo.thumbnailUrl}
+          alt=""
+        />
       </div>
       {popInfo === idx && (
         <div className="fixed top-0 bottom-0 w-full flex items-center justify-center left-[50%] translate-x-[-50%] max-w-[440px] bg-[rgba(0,0,0,0.7)] z-[9999]">
+          <div
+            onClick={() => setPopInfo(null)}
+            className="cursor-pointer absolute w-[20px] h-[20px] bg-pop-close bg-no-repeat top-5 right-5"
+          ></div>
           <div className="w-full relative">
             <Image
               width={0}
@@ -58,10 +69,7 @@ export default function PhotoItem({
               src={photo.imgUrl}
               alt=""
             />
-            <div
-              onClick={() => setPopInfo(null)}
-              className="cursor-pointer absolute w-[20px] h-[20px] bg-pop-close bg-no-repeat top-5 right-5"
-            ></div>
+
             <div
               onClick={handleBack}
               className="cursor-pointer absolute w-[50px] h-[50px] bg-img-back bg-no-repeat left-0 top-[50%] translate-y-[-50%]"

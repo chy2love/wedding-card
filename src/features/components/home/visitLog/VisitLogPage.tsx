@@ -13,10 +13,6 @@ export default function VisitLogPage() {
     getVisitLogs();
     return () => {};
   }, []);
-  useEffect(() => {
-    console.log('visitLog => ', visitLogs);
-    return () => {};
-  }, [visitLogs]);
   const getVisitLogs = async () => {
     setPostVisitLogPopState(false);
     const response = await fetch('/api/dynamic/visit-log', {
