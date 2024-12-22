@@ -15,10 +15,10 @@ export const metadata: Metadata = {
         alt: '하영♥소희'
       }
     ]
+  },
+  icons: {
+    icon: '/favicon.ico'
   }
-  // icons: {
-  //   icon: '/favicon.ico'
-  // }
 };
 const nanumGothic = Nanum_Gothic({
   subsets: ['latin'],
