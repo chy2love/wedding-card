@@ -15,9 +15,6 @@ export const metadata: Metadata = {
         alt: '하영♥소희'
       }
     ]
-  },
-  icons: {
-    icon: '/favicon.ico'
   }
 };
 const nanumGothic = Nanum_Gothic({
@@ -41,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      {/* <link rel="icon" href="/assets/favicon.ico" sizes="any" /> */}
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className={`${nanumGothic.className} ${dmSerif.variable} ${notoSerif.variable}`}>{children}</body>
     </html>
   );
