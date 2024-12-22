@@ -14,6 +14,7 @@ import { Scrollbar } from 'swiper/modules';
 import { VisitLogItem } from '@/types/types';
 import VisitLogContent from '../visitLog/VisitLogContent';
 import PostVisitLog from '../visitLog/PostVisitLog';
+import moment from 'moment';
 export default function WebtoonDetail() {
   const webtoonId = useParams().id;
   const [webtoonTitle, setWebtoonTitle] = useState<string>('');
@@ -38,8 +39,16 @@ export default function WebtoonDetail() {
     });
     if (response.status === 200) {
       const data = await response.json();
-      console.log(data);
-      setVisitLogs(data.data);
+      const sortedData = data.data.sort((a: any, b: any) => {
+        const momentA = moment(a.date);
+        const momentB = moment(b.date);
+        if (momentA.isBefore(momentB)) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+      setVisitLogs(sortedData);
     }
   };
   useEffect(() => {
@@ -55,6 +64,10 @@ export default function WebtoonDetail() {
       <div className="fixed left-[50%] translate-x-[-50%] top-0 bg-white h-[51px] max-w-[440px] w-full flex items-center gap-[11px] px-[19px] border-b border-[#666667]">
         <div className="w-6 h-6 bg-left-arrow-24 cursor-pointer" onClick={goBack}></div>
         <p className="font-bold text-lg text-[#666667]">{webtoonTitle}</p>
+        <Link
+          className='absolute top-[50%] translate-y-[-50%] right-5 w-6 h-6 bg-[url("./assets/navigator/home.svg")]'
+          href={'/dynamic/main'}
+        ></Link>
       </div>
       <div className="w-full m-auto max-w-[440px] overflow-hidden pt-[51px]">
         <Swiper

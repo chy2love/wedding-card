@@ -21,22 +21,6 @@ export function RsvpForm() {
   } = useForm<RsvpFormProps>({ mode: 'onChange' });
   const watching = watch();
   const [toasted, setToasted] = useState<boolean>(false);
-  useEffect(() => {
-    getRsvp();
-    return () => {};
-  }, []);
-  const getRsvp = async () => {
-    const response = await fetch(`/api/dynamic/rsvp`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    if (response.status === 200) {
-      const data = await response.json();
-      console.log(data);
-    }
-  };
   const onSubmit = async (value: any) => {
     console.log(' => ', value);
     const response = await fetch(`/api/dynamic/rsvp`, {

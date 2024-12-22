@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { VisitLogList } from './VisitLogList';
 import PostVisitLog from './PostVisitLog';
 import { VisitLogItem } from '@/types/types';
+import moment from 'moment';
 
 export function VisitLog() {
   const [postPopState, setPostPopState] = useState<boolean>(false);
@@ -21,8 +22,16 @@ export function VisitLog() {
     });
     if (response.status === 200) {
       const data = await response.json();
-      console.log(data);
-      setVisitLogs(data.data);
+      const sortedData = data.data.sort((a: any, b: any) => {
+        const momentA = moment(a.date);
+        const momentB = moment(b.date);
+        if (momentA.isBefore(momentB)) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+      setVisitLogs(sortedData);
     }
   };
   return (

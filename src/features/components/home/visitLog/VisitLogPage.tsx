@@ -6,6 +6,7 @@ import PopWrap from '../../ui/PopWrap';
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import PostVisitLog from './PostVisitLog';
+import moment from 'moment';
 export default function VisitLogPage() {
   const [visitLogs, setVisitLogs] = useState<VisitLogItem[]>([]);
   const [postVisitLogPopState, setPostVisitLogPopState] = useState<boolean>(false);
@@ -23,8 +24,16 @@ export default function VisitLogPage() {
     });
     if (response.status === 200) {
       const data = await response.json();
-      console.log(data);
-      setVisitLogs(data.data);
+      const sortedData = data.data.sort((a: any, b: any) => {
+        const momentA = moment(a.date);
+        const momentB = moment(b.date);
+        if (momentA.isBefore(momentB)) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+      setVisitLogs(sortedData);
     }
   };
   return (
