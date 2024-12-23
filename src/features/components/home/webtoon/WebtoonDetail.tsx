@@ -69,7 +69,7 @@ export default function WebtoonDetail() {
           href={'/dynamic/main'}
         ></Link>
       </div>
-      <div className="w-full m-auto max-w-[440px] overflow-hidden pt-[51px]">
+      <div className="w-full m-auto max-w-[440px] overflow-hidden pt-[51px] flex items-center min-h-screen bg-white">
         <Swiper
           scrollbar={{ draggable: true, dragSize: 3, el: '.scrollbar-el' }}
           modules={[Scrollbar]}
