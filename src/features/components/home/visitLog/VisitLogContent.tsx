@@ -58,7 +58,7 @@ function VisitLogContentItem({
   return (
     <>
       <div className="w-full relative p-5 flex gap-[10px] border-b border-[#EBEBEB]">
-        <div className="w-10 h-10 relative rounded-[4px] overflow-hidden">
+        <div className="w-10 h-10 relative rounded-[4px] overflow-hidden shrink-0">
           <Image layout="fill" objectFit="contain" src={visitLogSrc[visitLog.thumbnail].active} alt="" />
         </div>
         <div className="flex flex-col gap-2">
@@ -66,7 +66,7 @@ function VisitLogContentItem({
             <p className="text-md text-black">{visitLog.name}</p>
             <p className="text-sm text-[#9B9B9B]">{visitLog.date}</p>
           </div>
-          <p className="text-[#666667] text-md">{visitLog.message}</p>
+          <p className="text-[#666667] text-md leading-[18px] break-keep whitespace-pre-wrap">{visitLog.message}</p>
         </div>
         <button
           onClick={() => setDeletePopState(true)}
