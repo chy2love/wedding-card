@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 interface RsvpFormProps {
@@ -12,6 +13,7 @@ interface RsvpFormProps {
   willEat: 'true' | 'false' | '';
 }
 export function RsvpForm() {
+  const router = useRouter();
   const {
     register,
     control,
@@ -41,7 +43,8 @@ export function RsvpForm() {
     setToasted(true);
     setTimeout(() => {
       setToasted(false);
-    }, 3000);
+      router.push('/dynamic/main');
+    }, 2000);
   };
   const getValidation = () => {
     if (!watching.name || watching.name.length === 0) {
